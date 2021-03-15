@@ -12,22 +12,14 @@ public class Entree {
 		int choix = scanner.nextInt();
 		if (choix == 1) {
 			
-			int nbMys;
-			int nbChoix;
-			while() {
-				
-			}
+		}
+		else if (choix == 2)
+		{
 			
-			if (proposition > nbMys) {
-				System.out.println("Trop grand +");
-			}
-			else if(proposition < nbMys) {
-				System.out.println("trop petit -");
-			}
-			else {
-				System.out.println("bravo");
-			}
+		}
+		else {
 			
+		}
 	}
 
 }
