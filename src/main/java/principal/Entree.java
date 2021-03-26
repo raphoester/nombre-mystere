@@ -1,6 +1,5 @@
 package principal;
-import java.util.Scanner;
-
+import util.Interaction;
 public class Entree {
 
 	public static void main(String[] args) {
@@ -8,17 +7,16 @@ public class Entree {
 		System.out.println("Nombre mystère ");
 		System.out.println("1. Deviner");
 		System.out.println("2. Faire deviner l'ordinateur");
-		Scanner scanner = new Scanner(System.in);
-		int choix = scanner.nextInt();
-		if (choix == 1) {
+		
+		int choix = Interaction.menu(2);
+		if(choix == 1) {
 			
 		}
-		else if (choix == 2)
-		{
+		else if (choix == 2) {
 			
 		}
 		else {
-			
+			System.out.println("Erreur dans la fonction menu");
 		}
 	}
 
