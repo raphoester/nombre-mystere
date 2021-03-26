@@ -18,6 +18,7 @@ public class Entree {
 		else {
 			System.out.println("Erreur dans la fonction menu");
 		}
+
 	}
 
 }
