@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: testsPrincipal.TestJeu
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.038 s <<< FAILURE! - in testsPrincipal.TestJeu
-testsPrincipal.TestJeu.compTest  Time elapsed: 0.022 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-	at testsPrincipal.TestJeu.compTest(TestJeu.java:24)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in testsPrincipal.TestJeu
