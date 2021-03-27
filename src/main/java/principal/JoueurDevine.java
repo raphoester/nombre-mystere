@@ -4,7 +4,10 @@ import java.util.Random;
 
 public class JoueurDevine extends Partie{
 	public JoueurDevine(int difficulte) {
-		super(difficulte);
+		super();
+		this.difficulte = difficulte;
+		this.tailleMaxNombre = (int) Math.pow(10, difficulte);
+		this.nombreMystere = definirnombre();
 	}
 
 

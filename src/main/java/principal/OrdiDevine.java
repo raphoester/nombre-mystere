@@ -4,11 +4,21 @@ import util.Interaction;
 
 public class OrdiDevine extends Partie {
 	
-	public OrdiDevine(int difficulte) {
-		super(difficulte);
+	public OrdiDevine() {
+		super();
+		this.nombreMystere = definirnombre();
+		
+		int i = 0;
+		int num = nombreMystere;
+		while(num!=0){
+	         num = num/10;
+	         i++;
+	      }
+		this.difficulte = i;
+		this.comparaison = new char[difficulte];
+		this.tailleMaxNombre = (int) Math.pow(10, difficulte);
 	}
 
-//		s.replaceFirst("^0+(?!$)", "");
 	@Override
 	public int definirnombre() {
 		System.out.println("Veuillez choisir le nombre que l'ordinateur va devoir deviner (format integer).");
@@ -17,13 +27,11 @@ public class OrdiDevine extends Partie {
 
 	@Override
 	public int deviner() {
-		System.out.println("Entree : " + essai);
 		int[] reponseDecomposee = Interaction.decomp(essai, difficulte);
 		
 		for(int i = 0; i < difficulte; i++) {
 			switch(comparaison[i]) {
 			case '=':
-				reponseDecomposee[i] = reponseDecomposee[i];
 				break;
 			case '-':
 				reponseDecomposee[i] = (reponseDecomposee[i]+10)/2;
@@ -34,7 +42,6 @@ public class OrdiDevine extends Partie {
 			default:
 				reponseDecomposee[i] = 5;
 			}
-
 		}
 		essai = 0;
 		for (int a : reponseDecomposee) {

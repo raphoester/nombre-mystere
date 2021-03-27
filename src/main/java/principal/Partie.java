@@ -9,11 +9,7 @@ public abstract class Partie implements IPartie {
 	protected final int tailleMaxInt = 2147483647;
 	protected int tailleMaxNombre;
 	
-	public Partie(int difficulte) {
-		this.difficulte = difficulte;
-		this.comparaison = new char[difficulte];
-		this.tailleMaxNombre = (int) Math.pow(10, difficulte);
-		this.nombreMystere = definirnombre();
+	public Partie() {
 		this.vie = 11;
 	}
 	
@@ -25,6 +21,12 @@ public abstract class Partie implements IPartie {
 			System.out.println("Comparaison :");
 			System.out.println(comparaison);
 			essai = deviner();
+		}
+		if (vie == 0) {
+			System.out.println("Perdu !");
+		}
+		else {
+			System.out.println("Gagné !");
 		}
 	}
 	
@@ -50,5 +52,4 @@ public abstract class Partie implements IPartie {
 		}
 		return reponse;
 	}
-	
 }
