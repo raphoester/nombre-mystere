@@ -17,10 +17,9 @@ public abstract class Partie implements IPartie {
 		while(essai != this.nombreMystere && vie > 0) {
 			vie -=1;
 			System.out.println("Vies : " + vie );
-			comparaison = Partie.comp(nombreMystere, essai, difficulte);
-			System.out.println("Comparaison :");
-			System.out.println(comparaison);
 			essai = deviner();
+			comparaison = Partie.comp(nombreMystere, essai, difficulte);
+			System.out.println(comparaison);
 		}
 		if (vie == 0) {
 			System.out.println("Perdu !");

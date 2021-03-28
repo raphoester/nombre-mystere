@@ -9,20 +9,21 @@ public class TestJeu {
 	@Test
 	void compTest() {
 		// Arrange
-		int but = 1434;
-		int essai = 0532;
+		int but = 14348;
+		int essai = 5328;
+		int diff = 5;
 
 		// Act
-		char[] reponse = Partie.comp(but, essai, 4);
-		char[] theorie = {'-', '+', '=', '-'};
+		char[] reponse = Partie.comp(but, essai, diff);
+		char[] theorie = {'-', '+', '=', '-', '='};
 		
 		
-//		// Assert
-//		for(int i = 0 ; i < 4 ; i++) {
-//			if(reponse[i] != theorie[i]) {
-//				fail();
-//			}
-//		}
+		// Assert
+		for(int i = 0 ; i < diff ; i++) {
+			if(reponse[i] != theorie[i]) {
+				fail();
+			}
+		}
 
 	}
 }

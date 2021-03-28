@@ -1,9 +1,11 @@
 package principal;
 
 import util.Interaction;
+import util.Discriminant;
 
 public class OrdiDevine extends Partie {
 	
+	Discriminant[] donnees ; 
 	public OrdiDevine() {
 		super();
 		this.nombreMystere = definirnombre();
@@ -14,14 +16,20 @@ public class OrdiDevine extends Partie {
 	         num = num/10;
 	         i++;
 	      }
+		
 		this.difficulte = i;
 		this.comparaison = new char[difficulte];
 		this.tailleMaxNombre = (int) Math.pow(10, difficulte);
+		this.donnees = new Discriminant[difficulte];
+		
+		for (i = 0 ; i < difficulte ; i++) {
+			this.donnees[i] = new Discriminant();
+		}
 	}
 
 	@Override
 	public int definirnombre() {
-		System.out.println("Veuillez choisir le nombre que l'ordinateur va devoir deviner (format integer).");
+		System.out.println("Veuillez choisir le nombre que l'ordinateur va devoir deviner (max : " + tailleMaxInt + ").");
 		return Interaction.delta(tailleMaxInt);
 	}
 
@@ -34,10 +42,12 @@ public class OrdiDevine extends Partie {
 			case '=':
 				break;
 			case '-':
-				reponseDecomposee[i] = (reponseDecomposee[i]+10)/2;
+				donnees[i].majBI(reponseDecomposee[i]);
+				reponseDecomposee[i] = donnees[i].prob();
 				break;
 			case '+':
-				reponseDecomposee[i] = reponseDecomposee[i]/2;
+				donnees[i].majBS(reponseDecomposee[i]);
+				reponseDecomposee[i] = donnees[i].prob();
 				break;
 			default:
 				reponseDecomposee[i] = 5;

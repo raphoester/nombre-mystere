@@ -54,7 +54,6 @@ public class Entree {
 						System.out.println("Erreur critique du programme. Fin de l'exécution.");
 						System.exit(1);
 					}
-					
 				}
 				else if (choixBis == 2){
 					continuerMemeMode = false;
