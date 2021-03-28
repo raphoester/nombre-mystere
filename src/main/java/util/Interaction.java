@@ -18,8 +18,12 @@ public abstract class Interaction {
 		}
 		int res = 0;
 		do {
+		    while (!scanner.hasNextInt()) {
+		        scanner.next(); // this is important!
+		    }
 			res = scanner.nextInt();
-		} while (!Interaction.contient(possibilites, res));
+		} while(!Interaction.contient(possibilites, res));
+		
 		scanner.close();
 		return res;
 	}
@@ -34,7 +38,11 @@ public abstract class Interaction {
 		});
 		
 		int res;
+
 		do {
+		    while (!scanner.hasNextInt()) {
+		        scanner.next(); // this is important!
+		    }
 			res = scanner.nextInt();
 		} while(res>max || res<0);
 		scanner.close();
