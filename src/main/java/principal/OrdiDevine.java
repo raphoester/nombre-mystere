@@ -29,8 +29,8 @@ public class OrdiDevine extends Partie {
 
 	@Override
 	public int definirnombre() {
-		System.out.println("Veuillez choisir le nombre que l'ordinateur va devoir deviner (max : " + tailleMaxInt + ").");
-		return Interaction.delta(tailleMaxInt);
+		System.out.println("Veuillez choisir le nombre que l'ordinateur va devoir deviner (max : " + tailleMaxInt/10 + ").");
+		return Interaction.delta(tailleMaxInt/10);
 	}
 
 	@Override
